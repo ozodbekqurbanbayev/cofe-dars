@@ -30,6 +30,8 @@
 /* CUSTOM PROPS */
 :root{
   --text-color:#333;
+  --accent-color:#0A775F;
+  --outline-color:var(--accent-color);
 }
 /* GLOBAL */
 html{
@@ -61,16 +63,106 @@ img{
   height: auto;
 
 }
+*:focus{
+outline: 2px dashed var(--outline-color);
+outline-offset: 3px;
+}
 /* CONTAINER */
 .container{
 width: 100%;
-max-width: 1200px;
-padding-left: 50px;
-padding-right: 50px;
+max-width: 1440px;
+padding-left: 20px;
+padding-right: 20px;
 margin-left: auto;
 margin-right: auto;
 }
 /* MAIN CONTENT */
 .main-content{
   flex-grow: 1;
+}
+
+/* SITE-HADER-HERO-WRAPPER */
+.site-header-hero-wrapper{
+background-image: url(../img/site-header-bg-img.jpg);
+
+}
+
+/* SITE-HEADER */
+.site-header {
+  padding-top: 40px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 40px;
+
+}
+.site-header-container {
+  width: 100%;
+  max-width: 1340px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+
+}
+
+.site-header-logo-link {
+  display: flex;
+  text-decoration: none;
+}
+.site-header-logo-link:hover{
+  opacity: 0.8;
+}
+.site-header-logo-link:active{
+  opacity: 0.6;
+}
+.site-header-logo-img {
+  width: 235px;
+  height: 24px;
+  object-fit: contain;
+}
+/* SITENAV */
+
+.sitenav-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+
+
+}
+.sitenav-item:not(:last-child) {
+  margin-right: 40px;
+}
+.sitenav-link {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight:bold;
+  line-height: normal;
+color: var(--text-color);
+}
+.sitenav-link:hover{
+  color: var(--accent-color);
+}
+.sitenav-link:active{
+  opacity: 0.6;
+
+}
+
+/* RETINA BG */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+  .site-header-hero-wrapper{
+    background-image: url(../img/site-header-bg-img@2x.jpg);
+  }
+
 }
